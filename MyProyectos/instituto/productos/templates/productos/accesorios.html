@@ -1,0 +1,76 @@
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <section class="row background-2"> <!--Lista de productos ordenados en divs y con columnas de 10 ordenando a la derecha y texto centrado-->
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Collar con Encaje</h3>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/collar/collarCeleste.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/collar/collarNegro.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/collar/collarRojo.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/collar/collarRosa.jpg' %}" alt="">
+            </figure>
+            <br>
+            <label for="talla">Talla</label><!--Selector de talla-->
+            <select name="talla">
+                <option value="unica">Talla Única</option>
+            </select>
+            <br>
+            <label for="color">Color</label> <!--Selector de color-->
+            <select name="color">
+                <option disabled="">Seleccione un color</option>
+                <option value="negro">Negro</option>
+                <option value="rosado">Rosado</option>
+                <option value="celeste">Celeste</option>
+                <option value="rojo">Rojo</option>
+            </select>
+            <br>
+        </div>
+    </section>    
+    <div class="background-3 text-rigth">
+    </div>        
+    <section class="row background-2">
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Cintillo con Encaje</h3> 
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/cintillo/cintAzul.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/cintillo/cintNegro.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/cintillo/cintRosa.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/cintillo/cintRojo.jpg' %}" alt="">
+            </figure>
+            <br>
+            <label for="talla">Talla</label>
+            <select name="talla">
+                <option value="unica">Talla Única</option>
+            </select>
+            <br>
+            <label for="color">Color</label>
+            <select name="color">
+                <option disabled="">Seleccione un color</option>
+                <option value="negro">Negro</option>
+                <option value="rosado">Rosado</option>
+                <option value="celeste">Celeste</option>
+                <option value="rojo">Rojo</option>
+            </select>
+            <br>
+        </div>
+    </section>   
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

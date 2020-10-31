@@ -1,0 +1,72 @@
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+    <section class="row background-2">
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Shorts con encaje Gothic Lolita</h3>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/short/shores.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/short/shorBlack.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/short/shorRose.jpg' %}" alt="">
+            </figure>
+            <br>
+            <label for="talla">Talla</label>
+            <select name="talla">
+                <option disabled="">Seleccione una talla</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+            <label for="talla">Color</label>
+            <select name="color">
+                <option disabled="">Seleccione un color</option>
+                <option value="negro">Negro</option>
+                <option value="rosado">Rosado</option>
+            </select>
+            <br>
+        </div>
+    </section>
+    <div class="background-3 text-rigth">
+    </div>          
+    <section class="row background-2">
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Polera Kawaii Shiba Inu</h3> 
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/polera/poleraBlack.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/polera/poleraWhite.jpg' %}" alt="">
+            </figure>
+            <br>
+            <label for="talla">Talla</label>
+            <select name="talla">
+                <option disabled="">Seleccione una talla</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+            <br>
+            <label for="talla">Color</label>
+            <select name="color">
+                <option disabled="">Seleccione un color</option>
+                <option value="negro">Negro</option>
+                <option value="Blanco">Blanco</option>
+            </select>
+            <br>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

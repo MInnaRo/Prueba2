@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="materialize\js\materialize.js" charset="utf-8"></script>
+    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="materialize\css\materialize.css">
+    <title>Registro</title>
+</head>
+
+<body>
+    <header class="background-3 text-center">
+        <a href="registro.html" target="_blank" style="color:aliceblue">Registro </a>
+        <a href="productos.html" target="_blank" style="color:aliceblue">Productos </a>
+        <a href="leciel.html" target="_blank" style="color:aliceblue">Le~Ciel </a>
+        <a href="index.html" target="_blank" style="color:aliceblue">Volver</a>
+    </header>
+
+    <script type="text/javascript">
+        function revisarNombre() {
+            var name = document.getElementById("nombre");
+            name.value = name.value.toLowerCase();
+        }
+        function revisarApellido() {
+            var lastName = document.getElementById("apellido");
+            lastName.value = lastName.value.toLowerCase();
+        }
+        function revisarEdad() {
+            var edad = "";
+            edad = document.getElementById("EDAD").value;
+            alert("Su edad es: " + edad);
+        }
+        function revisarEmail() {
+            var edad = "";
+            email = document.getElementById("EDAD").value;
+
+        }
+        function revisarEdad(color) {
+            color.style.background = "purple"
+        }
+
+        
+
+    </script>
+    <div>
+        <div>
+            <Form action"submit" method="POST" section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+                <!--Formulario-->
+                <center>
+                    <br><h4><u>Datos Personales</u></h4>
+                </center>
+                <br>
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3">
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre" 
+                            onblur="revisarNombre();">
+                        <td><label for="" style="font-size: large;">Nombre:</label>
+                    </div>
+                    <div class="col s3 pull-s3">
+                        <input type="text" id="apellido" name="apellido" required placeholder="Ingrese su apellido"
+                            onblur="revisarApellido();">
+                        <td><label for="" style="font-size: large;">Apellido:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3 ">
+                        <input type="number" id="edad" name="edad" required min="18" max="99"
+                            placeholder="Ingrese su edad" onfocus="revisarEdad(this);">
+                        <td><label for="" style="font-size: large;">Edad:</label>
+                    </div>
+                    <div class="col s3 pull-s3">
+                        <td><b><label for="" style="font-size: large;">Sexo:</label>
+                                <p>
+                                    <label>
+                                        <input name="sexo" type="radio" required />
+                                        <span>Femenino</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input name="sexo" type="radio" required />
+                                        <span>Masculino</span>
+                                    </label>
+                                </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3">
+                        <input type="email" id="email" name="email" required placeholder="Ingrese su e-mail"
+                            onblur="revisarEdad();">
+                        <td><label for="" style="font-size: large;">E-mail:</label>
+                    </div>
+                    <div class="col s3 pull-s3">
+                        <input type="tel" id="tel" name="tel" required placeholder="Ingrese su teléfono" min="8" max="9">
+                        <td><label for="" style="font-size: large;">Teléfono:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3">
+                        <br>
+                        <input type="text" class="datepicker" id="fecha" name="" value="" placeholder="Ingrese fecha">
+                        <label for="" style="font-size: large;">Fecha:</label>
+                    </div>
+                    <div class="col s3 pull-s3">
+                        <br>
+                        <input type="text" class="timepicker" id="hora" name="" value="" placeholder="Ingrese hora">
+                        <label for="" style="font-size: large;">Hora:</label>
+                    </div>
+                </div>
+                <br>
+                <center>
+                    <div class="container section form">
+                        <a href="#idmodal" class="btn modal-trigger" style="font-family: 'Times New Roman', Times, serif;">Términos y Condiciones</a>
+                        <div id="idmodal" class="modal" style="font-family: 'Times New Roman', Times, serif;">
+                            <div class="modal-content" style="background-color: black;">
+                                <h4>Términos y Condiciones</h4>
+                                <p>Es requisito necesario para la adquisición de los productos que se ofrecen en este
+                                    sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación
+                                    se redactan. El uso de nuestros servicios así como la compra de nuestros productos 
+                                    implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el 
+                                    presente documento. Todos los productos que son ofrecidos por nuestro sitio web 
+                                    pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera 
+                                    y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos 
+                                    casos, para adquirir un producto, será necesario el registro por parte del usuario, 
+                                    con ingreso de datos personales fidedignos y definición de una contraseña.
+                                    <br>
+                                    El usuario puede elegir y cambiar la clave para su acceso de administración de la
+                                    cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario
+                                    para la compra de alguno de nuestros productos. Le Ciel no asume la responsabilidad 
+                                    en caso de que entregue dicha clave a terceros.
+                                    <br>
+                                    Todas las compras y transacciones que se lleven a cabo por medio de este sitio web,
+                                    están sujetas a un proceso de confirmación y verificación, el cual podría incluir la
+                                    verificación del stock y disponibilidad de producto, validación de la forma de pago, 
+                                    validación de la factura (en caso de existir) y el cumplimiento de las condiciones 
+                                    requeridas por el medio de pago seleccionado.
+                                    En algunos casos puede que se requiera una verificación por medio de correo
+                                    electrónico.
+                                    <br>
+                                    Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en
+                                    las compras realizadas en este sitio web.
+                                    <br>
+                                    LICENCIA
+                                    <br>
+                                    Le Ciel a través de su sitio web concede una licencia para que los usuarios utilicen
+                                    los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones
+                                    que se describen en este documento.
+                                    <br>
+                                    USO NO AUTORIZADO
+                                    <br>
+                                    En caso de que aplique (para venta de software, templetes, u otro producto de diseño
+                                    y programación) usted no puede colocar uno de nuestros productos, modificado o sin 
+                                    modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución
+                                    o la reventa de ningún tipo.
+                                    <br>
+                                    PROPIEDAD
+                                    <br>
+                                    Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos,
+                                    modificado o sin modificar. Todos los productos son propiedad de los proveedores del 
+                                    contenido.En caso de que no se especifique lo contrario, nuestros productos se proporcionan
+                                    sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será responsables
+                                    de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, 
+                                    fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de 
+                                    utilizar nuestros productos.
+                                    <br>
+                                    POLÍTICA DE REEMBOLSO Y GARANTÍA
+                                    <br>
+                                    En el caso de productos que sean mercancías irrevocables no-tangibles, no realizamos 
+                                    reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender 
+                                    antes de comprarlo. Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente 
+                                    excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos 
+                                    productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado
+                                    al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y
+                                    sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no
+                                    cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están 
+                                    asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos
+                                    y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+                                    <br>
+                                    – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+                                    – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+                                    – En uso específico para la función con que fue diseñado de fábrica.
+                                    – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+                                    <br>
+                                    COMPROBACIÓN ANTIFRAUDE
+                                    <br>
+                                    La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser
+                                    suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones
+                                    fraudulentas.
+                                    <br>
+                                    PRIVACIDAD
+                                    <br>
+                                    Esta plataforma garantiza que la información personal que usted envía cuenta con la
+                                    seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación
+                                    de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una
+                                    orden judicial o requerimientos legales.
+                                    <br>
+                                    La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser
+                                    seleccionada al momento de crear su cuenta.
+                                    <br>
+                                    Le Ciel reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p><br>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="btn modal-close">Aceptar</a>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+
+                <br>
+
+                <center>
+                    <button type="submit" style="font-size:large;">Enviar</button>
+                    <!--Botón Enviar-->
+                    <button type="reset" style="font-size:large;">Limpiar</button>
+                    <!--Botón Limpiar-->
+                </center>
+
+                <br>
+                <br>
+
+            </Form>
+        </div>
+    </div>
+
+
+    <footer class="background-1 text-left">
+        <p> - Valeria Céspedes</p>
+        <p> - Romina Flores</p>
+        <p> - Duoc UC</p>
+    </footer>
+
+    <script type="text/javascript">$(document).ready(function () {
+            $('.datepicker').datepicker();
+        });</script>
+
+    <script type="text/javascript">$(document).ready(function () {
+            $('.timepicker').timepicker();
+            defaultTime: 'now'
+        });</script>
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
+
+</body>
+
+</html>

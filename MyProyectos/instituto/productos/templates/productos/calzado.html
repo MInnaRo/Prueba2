@@ -1,0 +1,84 @@
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+
+    <section class="row background-2">        
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Zapatos de Charol Lolita</h3>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/zapatos/shoesBlack.jpg' %}" alt="zapatos">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/zapatos/shoesRose.jpg' %}" alt="zapatos">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/zapatos/shoesWhite.jpg' %}" alt="zapatos">
+            </figure>
+            <br>
+            <label for="talla">Talla</label>
+            <select name="talla">
+                <option disabled="">Seleccione una talla</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+            </select>
+            <br>
+            <label for="color">Color</label>
+            <select name="color">
+                <option disabled="">Seleccione un color</option>
+                <option value="negro">Negro</option>
+                <option value="blanco">Blanco</option>
+                <option value="beige">Beige</option>
+            </select>
+            <br>
+        </div>
+        </div>
+    </section>    
+        <div class="background-3 text-rigth">
+        </div>
+    <section class="row background-2">
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Botas Gothic Lolita</h3>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/Botas/bootRose.jpg' %}" alt="botas">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/Botas/bootWhite.jpg' %}" alt="botas">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/Botas/bootBlack.jpg' %}" alt="botas">
+            </figure>
+            <br>
+            <label for="talla">Talla</label>
+            <select name="talla">
+                <option disabled="">Seleccione una talla</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+            </select>
+            <br>
+            <label for="color">Color</label>
+            <select name="color">
+                <option disabled="">Seleccione un color</option>
+                <option value="negro">Negro</option>
+                <option value="rosado">Rosado</option>
+                <option value="blanco">Blanco</option>
+            </select>
+            <br>
+        </div> 
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
+    

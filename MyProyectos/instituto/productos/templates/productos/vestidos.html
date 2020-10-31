@@ -1,0 +1,71 @@
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+    <section class="row background-2">
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Vestido estilo chino terciopelo</h3>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/Harajuku chino/mangaCorta.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/Harajuku chino/mangaLarga.jpg' %}" alt="">
+            </figure>
+            <br>
+            <label for="talla">Talla</label>
+            <select name="talla">
+                <option disabled="">Seleccione una talla</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+            <br>
+            <label for="tipo">Manga larga-corta</label>
+            <select name="tipo">
+                <option disabled="">Seleccione un tipo</option>
+                <option value="larga">Manga Larga</option>
+                <option value="corta">Manga Corta</option>
+            </select>
+            <br>
+        </div>
+    </div>
+    </section>   
+    <div class="background-3 text-rigth">
+    </div> 
+    <section class="row background-2">
+        <div id="pictures" class="col-xs-10 col-xs-offset-1 text-center">
+            <h3 id="tittle-pictures">Vestido estilo Victoriano Lolita</h3> 
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/Lolita victoriana/vicBlack.jpg' %}" alt="">
+            </figure>
+            <figure class="col-xs-12 col-sm-3">
+                <img src="{% static 'img/lolis/Lolita victoriana/vicRosa.jpg' %}" alt="">
+            </figure>
+            <br>
+            <label for="talla">Talla</label>
+            <select name="talla">
+                <option disabled="">Seleccione una talla</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+            <br>
+            <label for="talla">Color</label>
+            <select name="color">
+                <option disabled="">Seleccione un color</option>
+                <option value="negro">Negro y Blanco</option>
+                <option value="rosado">Rosado y Blanco</option>
+            </select>
+            <br>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

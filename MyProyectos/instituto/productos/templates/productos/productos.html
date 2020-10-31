@@ -1,0 +1,91 @@
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+  <center>
+    <section class="row background-2">
+          <h3 id="tittle-pictures">Nuestros Productos</h3>
+
+          <h3 id="tittle-pictures">Calzado</h3>
+            <img src="{% static 'img/lolis/calzado.jpg' %}" style="border: 2px solid; color: palevioletred;"alt="Calzado"><br>
+            <a href="calzado" target="_blank" style="color:aliceblue">Ir</a>
+
+          <br>
+          <br>
+
+          <h3 id="tittle-pictures">Vestidos</h3>
+            <img src="{% static 'img/lolis/vestidos.jpg' %}" style="border: 2px solid; color: palevioletred;" alt="Vestidos"><br>
+            <a href="vestidos" target="_blank" style="color: aliceblue">Ir</a>
+
+          <br>
+          <br>
+
+          <h3 id="tittle-pictures">Ropa</h3>
+            <img src="{% static 'img/lolis/ropa.jpg' %}" style="border: 2px solid; color: palevioletred;" alt="Ropa" ><br>
+            <a href="ropa" target="_blank" style="color:aliceblue">Ir</a>
+
+          <br>
+          <br>
+
+          <h3 id="tittle-pictures">Accesorios</h3>
+            <img src="{% static 'img/lolis/accesorios.jpg' %}" style="border: 2px solid; color:palevioletred;" alt="Accesorios" ><br>
+            <a href="accesorios" target="_blank" style="color:aliceblue">Ir</a>
+    </section>
+  </center>
+
+      <!--Carrusel-->
+  <div class="row justify-content-center">
+    <div class="background-4">
+      <center>
+        <H1>~Lo más Vendido~</H1>
+      </center>
+      <br>
+      <div class="carousel carousel-slider" data-indicators="true">
+        <a class="carousel-item" href="#one!"><img src="{% static 'img/slides/cinNegro.jpg' %}"></a>
+        <a class="carousel-item" href="#two!"><img src="{% static 'img/slides/shiba.jpg' %}"></a>
+        <a class="carousel-item" href="#three!"><img src="{% static 'img/slides/shorres2.jpg' %}"></a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true
+    });</script>
+
+
+  <style>
+    .carousel.carousel-slider {
+      height: 1000px !important;
+      width: 1000px !important;
+      max-width: 100%;
+      max-height: 100%;
+      /*what ever height */
+      margin: auto;
+
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+    }
+  </style>
+
+  <!--Función para el auto play del carrusel-->
+
+  <script>
+    setInterval(function () {
+      $('.carousel').carousel('next');
+    }, 2000);
+  </script>
+
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

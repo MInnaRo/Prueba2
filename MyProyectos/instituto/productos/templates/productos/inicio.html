@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'img/fonts.css' %}" ><!---->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"/>
+    <link rel="shortcut icon" href="{% static 'img/favicon-16x16.png'%}" type="image/x-icon"> <!--Icono de pestaña con Favicon-->
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> <!--Google font-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Le~Ciel Lolita Shop</title>
+</head>
+
+
+<body> <!--Fondo con logo Le~Ciel-->
+<nav>
+    <div class="nav-wrapper"> <!--Url de las paginas de Le Ciel-->
+        <div class="right hide-on-med-and-down">
+            <a href="{% url 'registro' %}" class="breadcrumb" style="color: black;">Registro</a>
+            <a href="productos" class="breadcrumb" style="color: black;">Productos</a>
+            <a href="{% url 'iniciarSesion' %}" class="breadcrumb" style="color: black;">Iniciar Sesión</a>
+        </div>
+    </div>
+</nav>
+
+
+
+    <div class="row">
+      <div class="bg-img bg-img-1">
+
+    </div>
+  </div>
+
+
+
+  <!--Sección con link de redes sociales-->
+
+      <div class="social">
+        <ul>
+          <li><a href="" class="icon-facebook2"></a></li>
+          <li><a href="" class="icon-twitter"></a></li>
+          <li><a href="" class="icon-instagram"></a></li>
+          <li><a href="" class="icon-envelop"></a></li>
+          <li><a href="" class="icon-whatsapp"></a></li>
+        </ul>
+      </div>
+
+
+
+    <!--Carrusel-->
+    <div class="row">
+      <div class="background-4">
+        <div class="carousel">
+          <a class="carousel-item" href=""><img src="{% static 'img/carrusel1/ventas.jpg' %}" width="250" height="200" style="border: 2px solid; color: black;"></a>
+          <a class="carousel-item" href=""><img src="{% static 'img/carrusel1/redeees.jpg' %}" width="250" height="200" style="border: 2px solid; color: black;"></a>
+          <a class="carousel-item" href=""><img src="{% static 'img/carrusel1/envios.jpg' %}" height="200" style="border: 2px solid; color: black;"></a>
+          <a class="carousel-item" href=""><img src="{% static 'img/carrusel1/feed.jpg' %}" width="250" height="200" style="border: 2px solid; color: black;"></a>
+        </div>
+      </div>
+    </div>
+
+    {% block content %}
+
+        {% endblock %}
+
+  <footer class="background-1 text-left"> <!--Footer con nuestros nombres-->
+    <br>
+    <p> - Valeria Céspedes</p>
+    <p> - Romina Flores</p>
+    <p> - Duoc UC</p>
+  </footer>
+  <!--Script Carrusel-->
+  <script>$(document).ready(function () {
+      $('.carousel').carousel();
+    });</script>
+
+
+  <script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
+  <script src="{% static 'js/jquery-3.5.1.mib.js' %}"></script>
+  <script src="{% static 'js/rango-jquery.js' %}"></script>
+
+<script type="text/javascript" src="{%  static 'js/codigoCarru.js' %}"></script>
+
+
+
+
+
+</body>
+
+
+</html>

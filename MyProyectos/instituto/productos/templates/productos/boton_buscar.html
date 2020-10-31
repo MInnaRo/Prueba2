@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Alumnos Por Rut</title>
+</head>
+<body>
+    <h1>Buscar Alumno por Rut</h1>
+    <br><br>
+    {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <script type='text/javascript'>alert('Error, rut no disponible vuelva intentar');</script>
+                {% endif %}
+            {% endfor %}
+    {% endif %}
+    <form action="buscar_por_rut" method="POST">
+        {% csrf_token %}
+        <label>Ingrese rut para buscar alumno</label>
+        <input type="text" name="rut">
+        <input type="submit" name="opcion" value="Buscar">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="materialize\js\materialize.js" charset="utf-8"></script>
+    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="materialize\css\materialize.css">
+    <title>Iniciar Sesion</title>
+</head>
+
+<body>
+    <header class="background-3 text-center">
+        <a href="index.html" target="_blank" class="font-sesion">Inicio</a>
+    </header>
+
+    <Form action"submit" method="POST" section class="background-5">
+        <section class="row background-6">
+            <div class="col s5 offset-s4">
+                
+                    <h1>Iniciar Sesión</h1>
+                    <form>
+                      <!-- USUARIO INPUT -->
+                      <label for="username" class="form" >Usuario</label>
+                      <input type="text" placeholder="Ingrese Usuario" required> <br>
+                      <!-- CONTRASEÑA INPUT -->
+                      <label for="password" class="form">Contraseña</label>
+                      <input type="password" placeholder="Ingrese Contraseña" required> 
+                      <br>
+                      <input type="submit" value="Aceptar" style="font-size:large;"><br>
+                      <a href="">¿Olvidaste tu contraseña?</a><br>
+                      <a href="registro.html">¿No tienes cuenta?</a>
+                    </form>
+                  </div>
+                </section>             
+
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
+</body>
+
+<footer class="background-1 text-left">
+    <p> - Valeria Céspedes</p>
+    <p> - Romina Flores</p>
+    <p> - Duoc UC</p>
+</footer>
+
+</html>

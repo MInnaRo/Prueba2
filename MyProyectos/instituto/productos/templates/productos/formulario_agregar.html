@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Agregar</title>
+</head>
+<body>
+    <h1>Agregar Alumno</h1>
+    <br><br>
+    <form action="agregar_alumno" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr><td><label>Rut      :</label><td><input type="text" name="rut"><br>
+        <tr><td><label>Nombre   :</label><td><input type="text" name="nombre"><br>
+        <tr><td><label>A.Paterno:</label><td><input type="text" name="aPaterno"><br>
+        <tr><td><label>A.Materno:</label><td><input type="text" name="aMaterno"><br>
+        <tr><td><label>Fecha Nac:</label><td><input type="date" name="fechaNac"><br>
+        <tr><td><label>Género   :</label><td>
+         <select name="genero">
+             <option value="Seleccionar" disabled>Seleccionar</option>
+             <option value="masculino">Masculino</option>
+             <option value="femenino">Femenino</option>
+         </select>
+        <br><br>
+
+        <tr><td><label>Foto     :</label><td><input type="file" name="foto">
+
+        <input type="submit" name="opcion" value="Grabar">
+    </form>
+</body>
+</html>
