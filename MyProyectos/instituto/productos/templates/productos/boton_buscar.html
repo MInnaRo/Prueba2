@@ -1,25 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Buscar Alumnos Por Rut</title>
-</head>
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
 <body>
-    <h1>Buscar Alumno por Rut</h1>
+    <h1>Buscar Id</h1>
     <br><br>
     {% if messages %}
             {% for message in messages %}
                 {% if message.tags == 'error' %}
-                    <script type='text/javascript'>alert('Error, rut no disponible vuelva intentar');</script>
+                    <script type='text/javascript'>alert('Error, ID no disponible vuelva intentar');</script>
                 {% endif %}
             {% endfor %}
     {% endif %}
-    <form action="buscar_por_rut" method="POST">
+    <form action="buscar_id" method="POST">
         {% csrf_token %}
         <label>Ingrese rut para buscar alumno</label>
-        <input type="text" name="rut">
+        <input type="text" name="id">
         <input type="submit" name="opcion" value="Buscar">
     </form>
+{% endblock %}
 
-</body>
-</html>
+{% block javascript%}
+{% endblock %}

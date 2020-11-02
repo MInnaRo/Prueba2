@@ -1,18 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Botón Listar</title>
-</head>
-<body>
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
 
     <h1>Botón Listar</h1>
     <br><br>
-    <form action="mostrar_datos" method="POST">
+    <center>
+        <br><h4><u>Botón Listar</u></h4>
+    </center>
+    <br>
+    <div class="row">
+        <div class="col s3 push-s3 offset-s3">
+            <form action="mostrar_datos" method="POST">
         {% csrf_token %}
-        <label> Pinche este botón para listar: </label>
-        <input type="submit" name="opcion" value="Listar">
+                  <label> Pinche este botón para listar: </label>
+                  <input type="submit" name="opcion" value="Listar">
+                </form>
 
-    </form>
-</body>
-</html>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
