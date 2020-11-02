@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Botón buscar</title>
-</head>
+{% extends "productos/inicio.html" %}
+
+{%block title %} Buscar{% endblock%}
+
+{% block content%}
+    {% load static %}
 <body>
     <h1>Buscar</h1>
     <br><br>
@@ -15,5 +15,7 @@
 
     </form>
 
-</body>
-</html>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
