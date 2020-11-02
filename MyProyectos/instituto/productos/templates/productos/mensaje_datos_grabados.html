@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Datos grabados</title>
-</head>
-<body>
-    <h1>¡Datos han sido grabados con exito!</h1>
-</body>
-</html>
+
+{% extends "productos/inicio2.html" %}
+
+{%block title %}Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+<div section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+        <div class="row">
+               <center>
+                   <br>
+                   <h2 >Datos Guardados</h2>
+                            <input type="submit" name="opcion" value="   Listar   ">
+                        </div>
+                    </div>
+               </center>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
