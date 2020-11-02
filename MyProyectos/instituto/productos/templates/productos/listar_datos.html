@@ -5,14 +5,13 @@
 {% block content %}
     {% load static %}
 
-<div class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+<div section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
     <h1>Listado datos</h1>
-    <br><br>
     La cantidad de alumnos es {{ listado|length }}<br><br>
 
     {% for  datos in listado %}
 
-        {{ datos.rut }} - {{ datos.nombre}} - {{ datos.apellido_paterno}} <br>
+        {{ datos.id }} - {{ datos.nombre}} - {{ datos.apellido_paterno}} <br>
 
     {% endfor %}
 </div>
