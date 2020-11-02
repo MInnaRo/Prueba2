@@ -26,6 +26,7 @@ urlpatterns = [
     path('iniciarSesion',views.iniciarSesion, name='iniciarSesion'),
     path('index',views.index, name='index'),
     path('admin',views.admin, name='admin'),
+    path('mostrar_datos',views.mostrar_datos, name='mostrar_datos'),
 
 
 ]

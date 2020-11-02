@@ -1,26 +1,24 @@
-{% extends "productos/inicio.html" %}
+{% extends "productos/inicio2.html" %}
 
-{%block title %} Boton Listar {% endblock%}
+{%block title %}Listar {% endblock%}
 
 {% block content%}
     {% load static %}
 
-    <h1>Botón Listar</h1>
-    <br><br>
-    <center>
-        <br><h4><u>Botón Listar</u></h4>
-    </center>
-    <br>
-    <div class="row">
-        <div class="col s3 push-s3 offset-s3">
-            <form action="mostrar_datos" method="POST">
-        {% csrf_token %}
-                  <label> Pinche este botón para listar: </label>
-                  <input type="submit" name="opcion" value="Listar">
-                </form>
 
+
+        <div class="bg-img bg-img-2">
+
+        <center><h4 ><u>Botón Listar</u></h4>
+        <div class="col s3 push-s3 offset-s3" >
+             <Form action="mostrar_datos" method="POST" section style="font-family: 'Times New Roman', Times, serif;">
+
+                {% csrf_token %}
+                <label > Liste los productos que se encuentran en inventario: </label><br>
+                <input type="submit" name="opcion" value="Listar"></center>
+            </form>
         </div>
-    </div>
+        </div>
 {% endblock %}
 
 {% block javascript%}

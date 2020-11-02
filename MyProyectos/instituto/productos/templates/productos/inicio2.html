@@ -18,35 +18,17 @@
   <title>Le~Ciel Lolita Shop</title>
 </head>
 
-
-<body> <!--Fondo con logo Le~Ciel-->
-
 <header class="background-3 text-center">
-    <a href="{% url 'productos' %}" target="_blank"style="color:aliceblue">Productos</a>
+    <a href="{% url 'registro' %}" target="_blank"style="color:aliceblue" >...</a>
+    <a href="{% url 'productos' %}" target="_blank"style="color:aliceblue">....</a>
+    <a href="{% url 'iniciarSesion' %}" target="_blank"style="color:aliceblue">...</a>
+    <a href="{% url 'auth_logout' %}" target="_blank"style="color:aliceblue">Cerrar Sesión</a>
 </header>
 
-
-
     <div class="row">
-      <div class="bg-img bg-img-2">
-
+      <div class="bg-img bg-img-1">
     </div>
   </div>
-
-
-
-  <!--Sección con link de redes sociales-->
-
-      <div class="social">
-        <ul>
-          <li><a href="" class="icon-facebook2"></a></li>
-          <li><a href="" class="icon-twitter"></a></li>
-          <li><a href="" class="icon-instagram"></a></li>
-          <li><a href="" class="icon-envelop"></a></li>
-          <li><a href="" class="icon-whatsapp"></a></li>
-        </ul>
-      </div>
-
 
     {% block content %}
 

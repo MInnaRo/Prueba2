@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Listado de Alumnos</title>
-</head>
-<body>
+{% extends "productos/inicio2.html" %}
+
+{%block title %} Boton Listar {% endblock %}
+
+{% block content %}
+    {% load static %}
+
+<div class="background-6" style="font-family: 'Times New Roman', Times, serif;">
     <h1>Listado datos</h1>
     <br><br>
     La cantidad de alumnos es {{ listado|length }}<br><br>
@@ -14,5 +15,9 @@
         {{ datos.rut }} - {{ datos.nombre}} - {{ datos.apellido_paterno}} <br>
 
     {% endfor %}
-</body>
-</html>
+</div>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
