@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "productos/inicio2.html" %}
+
+{%block title %}Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
     <title>Rut Eliminado</title>
-</head>
-<body>
-    <h1>Rut Eliminado</h1>
-</body>
-</html>
+
+
+<div section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+    <form action="mostrar_datos" method="POST" >
+        {% csrf_token %}
+        <div class="row">
+               <center>
+                   <br>
+                   <h2>Rut Eliminado</h2>
+
+                            <input type="submit" name="opcion" value="   Volver   ">
+                        </div>
+                    </div>
+               </center>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

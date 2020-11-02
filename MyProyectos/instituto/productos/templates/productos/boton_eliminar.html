@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Eliminar</title>
-</head>
-<body>
-      <h1>Eliminar por rut</h1>
-    <br><br>
-    <form action="eliminar_id" method="POST">
+{% extends "productos/inicio2.html" %}
+
+{%block title %}Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+<div section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+    <form action="eliminar_id" method="POST" >
         {% csrf_token %}
-        <label> Ingrese rut para eliminar: </label>
-        <input type="text" name="id">
-        <input type="submit" name="opcion" value="Eliminar">
-
+        <div class="row">
+               <center>
+                   <br>
+                   <h2>Eliminar por Id</h2>
+                <div class="row">
+                    <div>
+                        <td>
+                           <label for="" style="font-size: large;"> Ingrese ID para eliminar: </label>
+                            <input type="text" name="id" required placeholder="Ingrese ID"><br>
+                            <input type="submit" name="opcion" value="  Eliminar  ">
+                        </td>
+                        </div>
+                    </div>
+               </center>
+        </div>
     </form>
+</div>
+{% endblock %}
 
-</body>
-</html>
+{% block javascript%}
+{% endblock %}
