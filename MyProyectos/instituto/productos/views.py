@@ -30,7 +30,7 @@ def mostrar_datos(request):
     print("ok, estamos en mostrar_datos")
     listar = Alumno.objects.all()
     context={'listado':listar}
-    return render(request, 'productos/listar_datos.html', context)
+    return render(request, 'personas/listar_datos.html', context)
 
 def buscar(request):
     print("Estamos en la vista buscar")
@@ -48,16 +48,16 @@ def buscar_id (request):
                datos= Datos.objects.get(id=mi_id)
                if alumno is not None:
                    print("Datos=", datos)
-                   context={'datos':datos}
-                   return render(request, 'productos/mostrar_datos.html', context)
+                   context={'alumno':datos}
+                   return render(request, 'personas/mostrar_datos.html', context)
                else:
-                   return render(request, 'productos/error/error_202.html',{})
+                   return render(request, 'personas/error/error_202.html',{})
            except datos.DoesNotExist:
-               return render(request, 'productos/error/error_202.html', {})
+               return render(request, 'personas/error/error_202.html', {})
        else:
-           return render(request, 'productos/error/error_201.html', {})
+           return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error_203.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def eliminar(request):
     print("Estamos en la vista eliminar")
@@ -79,15 +79,15 @@ def eliminar_id(request):
                     print("Datos=", datos)
                     datos.delete()
                     context={}
-                    return render(request, 'productos/mensaje_eliminado.html',context)
+                    return render(request, 'personas/mensaje_eliminado.html',context)
                 else:
-                    return render(request, 'productos/error/error_202.html', {})
+                    return render(request, 'personas/error/error_202.html', {})
             except datos.DoesNotExist:
-                return render(request, 'productos/error/error_202.html', {})
+                return render(request, 'personas/error/error_202.html', {})
         else:
-            return render(request, 'productos/error/error_201.html', {})
+            return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error_203.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def agregar(request):
     print("Estamos en la vista agregar")
@@ -117,14 +117,14 @@ def agregar_datos(request):
 
                datos.save()
 
-               return render(request, 'productos/mensaje_datos_grabados.html',{})
+               return render(request, 'personas/mensaje_datos_grabados.html',{})
 
            except datos.DoesNotExist:
-               return render(request, 'productos/error/error_204.html', {})
+               return render(request, 'personas/error/error_204.html', {})
        else:
-           return render(request, 'productos/error/error_201.html', {})
+           return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error_203.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def editar(request):
     print("Estamos en la vista editar")
@@ -142,16 +142,16 @@ def buscar_editar(request):
                datos= Datos.objects.get(id=mi_id)
                if datos is not None:
                    print("Datos=", datos)
-                   context={'datos':datos}
-                   return render(request, 'productos/formulario_editar.html', context)
+                   context={'Datos':datos}
+                   return render(request, 'personas/formulario_editar.html', context)
                else:
-                   return render(request, 'productos/error/error_202.html',{})
+                   return render(request, 'personas/error/error_202.html',{})
            except datos.DoesNotExist:
-               return render(request, 'productos/error/error_202.html', {})
+               return render(request, 'personas/error/error_202.html', {})
        else:
-           return render(request, 'productos/error/error_201.html', {})
+           return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error_203.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def actualizar_datos(request):
     print("hola  estoy en actualizar_datos...")
@@ -176,25 +176,25 @@ def actualizar_datos(request):
 
                datos.save()  #actualiza
 
-               return render(request, 'productos/mensaje_datos_grabados.html',{})
+               return render(request, 'personas/mensaje_datos_grabados.html',{})
 
            except datos.DoesNotExist:
-               return render(request, 'productos/error/error_204.html', {})
+               return render(request, 'personas/error/error_204.html', {})
        else:
-           return render(request, 'productos/error/error_201.html', {})
+           return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error_203.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def menu(request):
     print("Estamos en la vista menu ")
-    alumnos = Datos.objects.all()
-    context={'datos':datos}
-    return render(request,'productos/menu_productos.html',context)
+    alumnos = Alumno.objects.all()
+    context={'alumnos':alumnos}
+    return render(request,'productos/menu_alumno.html',context)
 
 def menu_productos(request):
     print("Estamos en la vista menu productos ")
-    alumnos = Datos.objects.all()
-    context={'datos':datos}
+    alumnos = Alumno.objects.all()
+    context={'alumnos':alumnos}
     return render(request,'productos/menu_productos.html',context)
 
 def productos(request):
