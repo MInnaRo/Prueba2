@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Botón editar</title>
-</head>
-<body>
-    <h1>Editar</h1>
-    <br><br>
-    <form action="buscar_editar" method="POST">
+{% extends "productos/inicio2.html" %}
+
+{%block title %} <title>Botón editar</title>{% endblock%}
+
+{% block content%}
+    {% load static %}
+<div section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+    <form action="buscar_editar" method="POST" >
         {% csrf_token %}
-        <label> Ingrese rut para editar: </label>
-        <input type="text" name="id">
-        <input type="submit" name="opcion" value="Buscar">
+        <div class="row">
+               <center>
+                    <br><h4><u>Editar Productos</u></h4>
 
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3">
+                         <label> Ingrese id para editar: </label>
+                            <input type="text" name="id">
+                            <input type="submit" name="opcion" value="Buscar">
+                        </div>
+                    </div>
+               </center>
+        </div>
     </form>
+</div>
+{% endblock %}
 
-</body>
-</html>
+{% block javascript%}
+{% endblock %}
+
