@@ -10,8 +10,8 @@
     <br><br>
     <form action="actualizar_datos" method="POST">
         {% csrf_token %}
-        <input type="hidden" name="id_alumno" value="{{alumno.id_datos}}"><br>
-        <label>ID       :</label><input type="text" name="id" value="{{alumno.id}}"><br>
+        <input type="hidden" name="id_producto" value="{{producto.id_datos}}"><br>
+
         <label>Nombre   :</label><input type="text" name="nombre" value="{{alumno.nombre}}"><br>
         <label>A.Paterno:</label><input type="text" name="aPaterno" value="{{alumno.apellido_paterno}}"><br>
         <label>A.Materno:</label><input type="text" name="aMaterno" value="{{alumno.apellido_materno}}"><br>
