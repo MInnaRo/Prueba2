@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Alumnos</title>
+</head>
+<body>
+    <h1>Listado datos</h1>
+    <br><br>
+    La cantidad de alumnos es {{ listado|length }}<br><br>
+
+    {% for  datos in listado %}
+
+        {{ datos.rut }} - {{ datos.nombre}} - {{ datos.apellido_paterno}} <br>
+
+    {% endfor %}
+</body>
+</html>

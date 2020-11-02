@@ -1,0 +1,35 @@
+{% extends "productos/inicio.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+   <div class="row" style="background-color: #38040e;">
+
+        <div class="row">
+            <div class="col s3 offset-s3">
+                <br>
+                <a href="agregar" ><img src="{% static 'img/agregar.png' %}"  alt="" width="300" height="300"></a>
+            </div>
+            <div class="col s3 offset-s1">
+                <br>
+                <a href="eliminar" ><img src="{% static 'img/eliminar.png' %}"  alt="" width="300" height="300"></a>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+            <div class="col s3 offset-s3">
+                <br>
+                <a href="formulario_editar" ><img src="{% static 'img/modificar.png' %}"  alt="" width="300" height="300"></a>
+            </div>
+            <div class="col s3 offset-s1">
+                <br>
+                <a href="mostrar_productos" ><img src="{% static 'img/listar.png' %}"  alt="" width="300" height="300"></a>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

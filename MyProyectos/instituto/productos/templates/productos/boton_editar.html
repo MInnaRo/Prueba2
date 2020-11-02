@@ -2,23 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Editar alumno Por Rut</title>
+    <title>Botón editar</title>
 </head>
 <body>
-    <h1>Editar Alumno por Rut</h1>
+    <h1>Editar</h1>
     <br><br>
-    {% if messages %}
-            {% for message in messages %}
-                {% if message.tags == 'error' %}
-                    <script type='text/javascript'>alert('Error, rut no disponible vuelva intentar');</script>
-                {% endif %}
-            {% endfor %}
-    {% endif %}
-    <form action="buscar_para_editar" method="POST">
+    <form action="buscar_editar" method="POST">
         {% csrf_token %}
-        <label>Ingrese rut para editar alumno</label>
-        <input type="text" name="rut">
+        <label> Ingrese rut para editar: </label>
+        <input type="text" name="id">
         <input type="submit" name="opcion" value="Buscar">
+
     </form>
 
 </body>

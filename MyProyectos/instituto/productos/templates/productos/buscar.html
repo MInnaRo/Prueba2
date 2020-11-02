@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Botón buscar</title>
+</head>
+<body>
+    <h1>Buscar</h1>
+    <br><br>
+    <form action="buscar_id" method="POST">
+        {% csrf_token %}
+        <label> Ingrese rut para buscar: </label>
+        <input type="text" name="id">
+        <input type="submit" name="opcion" value="Buscar">
+
+    </form>
+
+</body>
+</html>

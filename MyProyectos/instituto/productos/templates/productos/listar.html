@@ -1,19 +1,18 @@
-{% extends "personas/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Botón Listar</title>
+</head>
+<body>
 
-{%block title %} Boton Listar {% endblock%}
-
-{% block content%}
-    <h1>Boton listar</h1>
+    <h1>Botón Listar</h1>
     <br><br>
-
-    <form action="mostrar_alumnos" method="POST">
+    <form action="mostrar_datos" method="POST">
         {% csrf_token %}
-        <label>Pinche este boton para listar los alumnos:</label>
+        <label> Pinche este botón para listar: </label>
         <input type="submit" name="opcion" value="Listar">
+
     </form>
-
-{% endblock %}
-
-{% block javascript%}
-{% endblock %}
-
+</body>
+</html>

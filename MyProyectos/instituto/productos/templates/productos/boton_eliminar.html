@@ -2,23 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Eliminar alumno por rut</title>
+    <title>Eliminar</title>
 </head>
 <body>
-    <h1>Eliminar Alumno por Rut</h1>
+      <h1>Eliminar por rut</h1>
     <br><br>
-    {% if messages %}
-            {% for message in messages %}
-                {% if message.tags == 'error' %}
-                    <script type='text/javascript'>alert('Error, rut no disponible vuelva intentar');</script>
-                {% endif %}
-            {% endfor %}
-    {% endif %}
-    <form action="eliminar_por_rut" method="POST">
+    <form action="eliminar_id" method="POST">
         {% csrf_token %}
-        <label>Ingrese rut a eliminar</label>
-        <input type="text" name="rut">
+        <label> Ingrese rut para eliminar: </label>
+        <input type="text" name="id">
         <input type="submit" name="opcion" value="Eliminar">
+
     </form>
 
 </body>

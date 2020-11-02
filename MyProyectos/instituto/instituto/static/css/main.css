@@ -161,7 +161,8 @@ h3 {
 }
 
 .bg-img-2 {
-  background-image: url('../img/f_loli/Rose.jpg');
+  background-color: #38040e;
+  background-image: url('../img/form_f.png');
 }
 
 .bg-img-3 {
@@ -225,7 +226,9 @@ footer {
   footer {
     padding: 1% 3%;
   }
- 
+
+ /* Carrusel */
+
   .carousel {
     overflow: hidden;
     position: relative;

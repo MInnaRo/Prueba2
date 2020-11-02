@@ -16,35 +16,48 @@ def inicio(request):
     context={}
     return render(request,'productos/inicio.html',context)
 
+def inicio2(request):
+    print("Estamos en inicio")
+    context={}
+    return render(request,'productos/inicio2.html',context)
+
 def listar(request):
     print("Estamos en la vista listar")
     context={}
     return render(request,'productos/listar.html',context)
 
-def mostrar_alumnos(request):
-    print("Estamos en la vista mostrar alumnos")
-    #lista = Alumno.objects.all()
-    lista = Alumno.objects.filter(activo = 1, genero = 'femenino')
-    context={'listado':lista}
-    return render(request,'productos/listar_alumnos.html',context)
+def mostrar_datos(request):
+    print("ok, estamos en mostrar_datos")
+    listar = Alumno.objects.all()
+    context={'listado':listar}
+    return render(request, 'personas/listar_datos.html', context)
 
 def buscar(request):
     print("Estamos en la vista buscar")
     context={}
     return render(request,'productos/boton_buscar.html',context)
 
-def buscar_por_rut(request):
-    print("Estamos en la vista buscar por rut")
-    try:
-        mi_rut=request.POST['rut']
-        alumno = Alumno.objects.get(rut = mi_rut)
-    except Alumno.DoesNotExist:
-        messages.error(request, "Alumno No existe")
-        context = {}
-        return render(request, 'productos/boton_buscar.html', context)
+def buscar_id (request):
+    print("hola  estoy en buscar_id...")
+    if request.method == 'POST':
+       mi_id = request.POST['id']
 
-    context = {'alumno': alumno}
-    return render(request, 'productos/mostrar_datos.html', context)
+       if mi_id != "":
+           try:
+               datos = datos()
+               datos= Datos.objects.get(id=mi_id)
+               if alumno is not None:
+                   print("Datos=", datos)
+                   context={'alumno':datos}
+                   return render(request, 'personas/mostrar_datos.html', context)
+               else:
+                   return render(request, 'personas/error/error_202.html',{})
+           except datos.DoesNotExist:
+               return render(request, 'personas/error/error_202.html', {})
+       else:
+           return render(request, 'personas/error/error_201.html', {})
+    else:
+        return render(request, 'personas/error/error_203.html', {})
 
 def eliminar(request):
     print("Estamos en la vista eliminar")
@@ -52,133 +65,125 @@ def eliminar(request):
     return render(request,'productos/boton_eliminar.html',context)
 
 
-def eliminar_por_rut(request):
+def eliminar_id(request):
 
-    print("hola  estoy en eliminar_por_rut...")
+    print("hola  estoy en eliminar_id...")
     if request.method == 'POST':
-        mi_rut = request.POST['rut']
+        mi_id = request.POST['id']
 
-        if mi_rut != "":
+        if mi_id != "":
             try:
-                alumno = Alumno()
-                alumno = Alumno.objects.get(rut=mi_rut)
-                if alumno is not None:
-                    print("Alumno=", alumno)
-                    alumno.delete()
-                    context = {}
-                    return render(request, 'productos/mensaje_alumno_eliminado.html', context)
+                datos = Datos()
+                datos = Datos.objects.get(id = mi_id)
+                if datos is not None:
+                    print("Datos=", datos)
+                    datos.delete()
+                    context={}
+                    return render(request, 'personas/mensaje_eliminado.html',context)
                 else:
-                    return render(request, 'productos/error/error2.html', {})
-            except alumno.DoesNotExist:
-                return render(request, 'productos/error/error2.html', {})
+                    return render(request, 'personas/error/error_202.html', {})
+            except datos.DoesNotExist:
+                return render(request, 'personas/error/error_202.html', {})
         else:
-            return render(request, 'productos/error/error1.html', {})
+            return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error3.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def agregar(request):
     print("Estamos en la vista agregar")
     context = {}
     return render(request, 'productos/formulario_agregar.html', context)
 
-def agregar_alumno(request):
-    print("hola  estoy en agregar_alumno...")
+def agregar_datos(request):
+    print("hola  estoy en agregar_datos...")
     if request.method == 'POST':
-       mi_rut = request.POST['rut']
+       mi_id = request.POST['id']
        mi_nombre= request.POST['nombre']
        mi_paterno=request.POST['aPaterno']
        mi_materno=request.POST['aMaterno']
        mi_fechaNac =request.POST['fechaNac']
        mi_genero=request.POST['genero']
-       mi_foto = request.FILES['foto']
 
-       if mi_rut != "":
+       if mi_id != "":
            try:
-               alumno = Alumno()
+               datos = Datos()
 
-               alumno.rut = mi_rut
-               alumno.nombre = mi_nombre
-               alumno.apellido_paterno = mi_paterno
-               alumno.apellido_materno = mi_materno
-               alumno.fecha_nacimiento = mi_fechaNac
-               alumno.genero = mi_genero
-               alumno.foto = mi_foto
+               datos.id = mi_id
+               datos.nombre = mi_nombre
+               datos.apellido_paterno = mi_paterno
+               datos.apellido_materno = mi_materno
+               datos.fecha_nacimiento = mi_fechaNac
+               datos.genero = mi_genero
 
-               alumno.save()
+               datos.save()
 
-               return render(request, 'productos/mensaje_datos_grabados.html',{})
+               return render(request, 'personas/mensaje_datos_grabados.html',{})
 
-           except alumno.DoesNotExist:
-               return render(request, 'productos/error/error4.html', {})
+           except datos.DoesNotExist:
+               return render(request, 'personas/error/error_204.html', {})
        else:
-           return render(request, 'productos/error/error1.html', {})
+           return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error3.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def editar(request):
     print("Estamos en la vista editar")
     context = {}
     return render(request, 'productos/boton_editar.html', context)
 
-def buscar_para_editar(request):
-    print("Estamos en la vista buscar para editar")
+def buscar_editar(request):
+    print("hola  estoy en buscar_editar...")
     if request.method == 'POST':
-        mi_rut = request.POST['rut']
+       mi_rut = request.POST['id']
 
-        if mi_rut != "":
-            try:
-                alumno = Alumno()
-                alumno = Alumno.objects.get(rut=mi_rut)
-                if alumno is not None:
-                    print("Alumno=", alumno)
-                    context = {'alumno': alumno}
-
-                    return render(request, 'productos/formulario_editar.html', context)
-                else:
-                    return render(request, 'productos/error/error2.html', {})
-            except alumno.DoesNotExist:
-                return render(request, 'productos/error/error2.html', {})
-        else:
-            return render(request, 'productos/error/error1.html', {})
+       if mi_id != "":
+           try:
+               datos = Datos()
+               datos= Datos.objects.get(id=mi_id)
+               if datos is not None:
+                   print("Datos=", datos)
+                   context={'Datos':datos}
+                   return render(request, 'personas/formulario_editar.html', context)
+               else:
+                   return render(request, 'personas/error/error_202.html',{})
+           except datos.DoesNotExist:
+               return render(request, 'personas/error/error_202.html', {})
+       else:
+           return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error3.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
-def actualizar_alumno(request):
-    print("hola  estoy en actualizar_alumno...")
+def actualizar_datos(request):
+    print("hola  estoy en actualizar_datos...")
     if request.method == 'POST':
-       mi_id = request.POST['id_alumno']
-       mi_rut = request.POST['rut']
+       mi_id = request.POST['id']
        mi_nombre= request.POST['nombre']
        mi_paterno=request.POST['aPaterno']
        mi_materno=request.POST['aMaterno']
        mi_fechaNac =request.POST['fechaNac']
        mi_genero=request.POST['genero']
-       mi_foto = request.FILES['foto']
 
-       if mi_rut != "":
+       if mi_id != "":
            try:
-               alumno = Alumno()
+               datos = Datos()
+               datos.id_datos = mi_id
+               datos.nombre = mi_nombre
+               datos.apellido_paterno = mi_paterno
+               datos.apellido_materno = mi_materno
+               datos.fecha_nacimiento = mi_fechaNac
+               datos.genero = mi_genero
+               datos.activo = 1
 
-               alumno.id_alumno = mi_id
-               alumno.rut = mi_rut
-               alumno.nombre = mi_nombre
-               alumno.apellido_paterno = mi_paterno
-               alumno.apellido_materno = mi_materno
-               alumno.fecha_nacimiento = mi_fechaNac
-               alumno.genero = mi_genero
-               alumno.activo = 1
-               alumno.foto = mi_foto
+               datos.save()  #actualiza
 
-               alumno.save() #actualiza
+               return render(request, 'personas/mensaje_datos_grabados.html',{})
 
-               return render(request, 'productos/mensaje_datos_grabados.html',{})
-
-           except alumno.DoesNotExist:
-               return render(request, 'productos/error/error4.html', {})
+           except datos.DoesNotExist:
+               return render(request, 'personas/error/error_204.html', {})
        else:
-           return render(request, 'productos/error/error1.html', {})
+           return render(request, 'personas/error/error_201.html', {})
     else:
-        return render(request, 'productos/error/error3.html', {})
+        return render(request, 'personas/error/error_203.html', {})
 
 def menu(request):
     print("Estamos en la vista menu ")
@@ -226,3 +231,15 @@ def iniciarSesion(request):
     print("Estamos en iniciarSesion")
     context={}
     return render(request,'productos/iniciarSesion.html',context)
+
+def index(request):
+    print("Estamos en index")
+    context={}
+    return render(request,'productos/index.html',context)
+
+def admin(request):
+    print("Estamos en la vista listar")
+    context={}
+    return render(request,'productos/admin.html',context)
+
+

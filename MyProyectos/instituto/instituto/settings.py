@@ -145,5 +145,5 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/productos/menu'  # The page you want users to arrive at after they successful log in
+LOGIN_REDIRECT_URL = '/productos/inicio'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'
