@@ -130,6 +130,10 @@ def editar(request):
     print("Estamos en la vista editar")
     context = {}
     return render(request, 'productos/boton_editar.html', context)
+def formulario_editar(request):
+    print("Estamos en la vista editar")
+    context = {}
+    return render(request, 'productos/boton_editar.html', context)
 
 def buscar_editar(request):
     print("hola  estoy en buscar_editar...")

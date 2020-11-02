@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-{ % load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulario editar</title>
-</head>
-<body>
+{% extends "productos/inicio2.html" %}
+
+{%block title %} Agregar Productos {% endblock%}
+
+{% block content%}
+    {% load static %}
     <h1>Editar Datos</h1>
     <br><br>
     <form action="actualizar_datos" method="POST">
@@ -33,5 +31,7 @@
         <br><br>
         <input type="submit" name="opcion" value="Actualizar">
     </form>
-</body>
-</html>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
