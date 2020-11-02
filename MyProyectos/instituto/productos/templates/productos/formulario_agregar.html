@@ -5,23 +5,64 @@
 {% block content%}
     {% load static %}
 
-    <h1>Agregar datos</h1>
-    <br><br>
-    <form action="agregar_datos" method="POST">
-        {% csrf_token %}
-        <label>Id       :</label><input type="text" name="id"><br>
-        <label>Nombre   :</label><input type="text" name="nombre"><br>
-        <label>A.Paterno:</label><input type="text" name="aPaterno"><br>
-        <label>A.Materno:</label><input type="text" name="aMaterno"><br>
-        <label>Fecha Nac:</label><input type="date" name="fechaNac"><br>
-        <label>Género   :</label>
-         <select name="genero">
-             <option value="Seleccionar" disabled>Seleccionar</option>
-             <option value="masculino">Masculino</option>
-             <option value="femenino">Femenino</option>
-         </select>
-        <br><br>
-        <input type="submit" name="opcion" value="Grabar">
+
+    <form action="agregar_datos" method="POST" section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+          {% csrf_token %}
+        <div class="row">
+               <center>
+                    <br><h4><u>Agregar Datos Productos</u></h4>
+                </center>
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3">
+                        <label for="" style="font-size: large;">Id Producto:</label>
+                        <input type="text" name="id" required placeholder="Registrastado por Id"><br>
+                        <td>
+                    </div>
+                    <div class="col s3 pull-s3">
+                        <label for="" style="font-size: large;">Nombre del Producto:</label>
+                        <input type="text" name="id" required placeholder="Ingrese Nombre del Producto"><br>
+                        <td>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3">
+                        <label for="" style="font-size: large;">A.Paterno:</label>
+                        <input type="text" name="aPaterno" required placeholder="Ingrese producto"><br>
+                        <td>
+                    </div>
+                    <div class="col s3 pull-s3">
+                        <label for="" style="font-size: large;">A.Materno:</label>
+                        <input type="text" name="aMaterno" required placeholder="Ingrese producto"><br>
+                        <td>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s3 push-s3 offset-s3">
+                        <label for="" style="font-size: large;">Fecha Nac:</label>
+                        <input type="date" name="fechaNac" required placeholder="Ingrese producto"><br>
+                        <td>
+                    </div>
+                    <div class="col s3 pull-s3">
+                        <td><b><label for="" style="font-size: large;">Sexo:</label>
+                                <p>
+                                    <label>
+                                        <input name="sexo" type="radio" required />
+                                        <span>Femenino</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input name="sexo" type="radio" required />
+                                        <span>Masculino</span>
+                                    </label>
+                                </p>
+                    </div>
+                </div>
+                <center>
+                <input type="submit" name="opcion" value="Grabar">
+                    </center>
+        </div>
+
     </form>
 
 

@@ -1,10 +1,10 @@
-{% extends "productos/inicio.html" %}
+{% extends "productos/inicio2.html" %}
 
 {%block title %} Buscar{% endblock%}
 
 {% block content%}
     {% load static %}
-<body>
+<div class="background-6" style="font-family: 'Times New Roman', Times, serif;>
     <h1>Buscar</h1>
     <br><br>
     <form action="buscar_id" method="POST">
@@ -14,6 +14,7 @@
         <input type="submit" name="opcion" value="Buscar">
 
     </form>
+</div>
 
 {% endblock %}
 
