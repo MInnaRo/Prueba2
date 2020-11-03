@@ -16,9 +16,11 @@
     {% endif %}
     <form action="buscar_id" method="POST">
         {% csrf_token %}
-        <label>Ingrese rut para buscar alumno</label>
-        <input type="text" name="id">
+        <label>Ingrese ID para buscar producto</label>
+        <input type="number" name="id">
         <input type="submit" name="opcion" value="Buscar">
+        <a href="admin">CANCELAR</a>
+
     </form>
 {% endblock %}
 

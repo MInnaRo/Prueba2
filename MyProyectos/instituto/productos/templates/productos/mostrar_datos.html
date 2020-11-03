@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mostrar datos</title>
-</head>
-<body>
-    <h1>Mostrar datos </h1>
-    <br><br>
 
-    Los datos: {{ datos }}
+{% extends "productos/inicio2.html" %}
 
-</body>
-</html>
+{%block title %} Mostrar Datos {% endblock%}
+
+{% block content%}
+    {% load static %}
+
+<div section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
+        <div class="row">
+               <center>
+                   <br>
+                       <h1>Mostrar datos </h1>
+                        <br><br>
+
+                         Los datos: {{ datos }}
+                    </div>
+               </center>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

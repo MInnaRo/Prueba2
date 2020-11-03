@@ -1,31 +1,29 @@
 {% extends "productos/inicio2.html" %}
 
-{%block title %} Buscar{% endblock%}
+{%block title %} Buscar {% endblock%}
 
 {% block content%}
     {% load static %}
+
+<center>
+
 <div section class="background-6" style="font-family: 'Times New Roman', Times, serif;">
-    <form action="buscar_id" method="POST">
+    <form action="buscar_editar" method="POST" >
         {% csrf_token %}
-       <div class="row">
-               <center>
-                    <br><h4><u>Buscar</u></h4>
-                </center>
+        <div class="row">
+                    <br><h4><u>Editar Productos</u></h4>
                 <div class="row">
-                    <div class="col s3 push-s3 offset-s3">
-                        <label> Ingrese rut para buscar: </label>
-                        <input type="text" name="id">
-                        <input type="submit" name="opcion" value="Buscar">
-                        <td>
+                    <div>
+                        <label for="" style="font-size: large;"> Ingrese id para buscar: </label>
+                        <input type="text" name="id" required placeholder="Ingrese ID">
+                        <input type="submit" name="opcion" value="   Buscar   ">
                     </div>
                 </div>
-       </div>
-
+        </div>
     </form>
 </div>
 
-
-
+</center>
 
 {% endblock %}
 

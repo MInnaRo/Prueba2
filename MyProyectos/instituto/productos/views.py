@@ -37,6 +37,11 @@ def buscar(request):
     context={}
     return render(request,'productos/boton_buscar.html',context)
 
+def productos(request):
+    print("Estamos en la vista productos")
+    context={}
+    return render(request,'productos/productos.html',context)
+
 def buscar_id (request):
     print("hola  estoy en buscar_id...")
     if request.method == 'POST':
@@ -46,7 +51,7 @@ def buscar_id (request):
            try:
                datos = datos()
                datos= Datos.objects.get(id=mi_id)
-               if alumno is not None:
+               if datos is not None:
                    print("Datos=", datos)
                    context={'datos':datos}
                    return render(request, 'productos/mostrar_datos.html', context)
@@ -98,22 +103,25 @@ def agregar_datos(request):
     print("hola  estoy en agregar_datos...")
     if request.method == 'POST':
        mi_id = request.POST['id']
-       mi_nombre= request.POST['nombre']
-       mi_paterno=request.POST['aPaterno']
-       mi_materno=request.POST['aMaterno']
-       mi_fechaNac =request.POST['fechaNac']
-       mi_genero=request.POST['genero']
+       mi_numero = request.POST['numero']
+       mi_nombre = request.POST['nombre']
+       mi_precio = request.POST['precio']
+       mi_stock = request.POST['stock']
+       mi_foto = request.FILES['foto']
+       mi_tipo = request.POST['tipo']
 
        if mi_id != "":
            try:
                datos = Datos()
 
-               datos.id = mi_id
-               datos.nombre = mi_nombre
-               datos.apellido_paterno = mi_paterno
-               datos.apellido_materno = mi_materno
-               datos.fecha_nacimiento = mi_fechaNac
-               datos.genero = mi_genero
+               producto = Producto()
+               producto.numero = mi_numero
+               producto.nombre = mi_nombre
+               producto.precio = mi_precio
+               producto.foto = mi_foto
+               producto.stock = mi_stock
+               producto.activo = 1
+               producto.tipo = mi_tipo
 
                datos.save()
 
@@ -130,6 +138,7 @@ def editar(request):
     print("Estamos en la vista editar")
     context = {}
     return render(request, 'productos/boton_editar.html', context)
+
 def formulario_editar(request):
     print("Estamos en la vista editar")
     context = {}
@@ -161,21 +170,23 @@ def actualizar_datos(request):
     print("hola  estoy en actualizar_datos...")
     if request.method == 'POST':
        mi_id = request.POST['id']
-       mi_nombre= request.POST['nombre']
-       mi_paterno=request.POST['aPaterno']
-       mi_materno=request.POST['aMaterno']
-       mi_fechaNac =request.POST['fechaNac']
-       mi_genero=request.POST['genero']
+       mi_numero = request.POST['numero']
+       mi_precio = request.POST['precio']
+       mi_nombre = request.POST['nombre']
+       mi_foto = request.FILES['foto']
+       mi_stock = request.POST['stock']
+       mi_tipo = request.POST['tipo']
 
        if mi_id != "":
            try:
                datos = Datos()
                datos.id_datos = mi_id
-               datos.nombre = mi_nombre
-               datos.apellido_paterno = mi_paterno
-               datos.apellido_materno = mi_materno
-               datos.fecha_nacimiento = mi_fechaNac
-               datos.genero = mi_genero
+               producto.numero = mi_numero
+               producto.precio = mi_precio
+               producto.nombre = mi_nombre
+               producto.foto = mi_foto
+               producto.stock = mi_stock
+               producto.tipo = mi_tipo
                datos.activo = 1
 
                datos.save()  #actualiza
@@ -247,3 +258,42 @@ def admin(request):
     return render(request,'productos/admin.html',context)
 
 
+def boton_buscar():
+    print("Estamos en la vista boton buscar")
+    context = {}
+    return render(request, 'productos/boton_buscar.html', context)
+
+
+def boton_editar():
+    print("Estamos en la vista boton editar")
+    context = {}
+    return render(request, 'productos/boton_editar.html', context)
+
+def boton_eliminar():
+    print("Estamos en la vista boton eliminar")
+    context = {}
+    return render(request, 'productos/boton_eliminar.html', context)
+
+
+def leciel():
+    print("Estamos en la vista leciel")
+    context = {}
+    return render(request, 'productos/leciel.html', context)
+
+
+def listar_datos():
+    print("Estamos en la vista listar_datos")
+    context = {}
+    return render(request, 'productos/listar_datos.html', context)
+
+
+def mensaje_datos_grabados():
+    print("Estamos en la vista mensaje_datos_grabados")
+    context = {}
+    return render(request, 'productos/mensaje_datos_grabados.html', context)
+
+
+def mensaje_eliminado():
+    print("Estamos en la vista mensaje_eliminado")
+    context = {}
+    return render(request, 'productos/mensaje_eliminado.html', context)
